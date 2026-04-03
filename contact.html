@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | École La Sagesse – THiès</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header>
+    <nav class="navbar">
+        <a href="ecole.html" class="nav-logo">
+            <div class="nav-logo-icon">S</div>
+            <div class="nav-logo-text">
+                <span class="nav-logo-name">La Sagesse</span>
+                <span class="nav-logo-sub">École Privée · THiès</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="ecole.html">Accueil</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="elementaire.html">Élémentaire</a></li>
+            <li><a href="college.html">Collège</a></li>
+            <li><a href="vie-scolaire.html">Vie scolaire</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="frais.html">Frais</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+        </ul>
+        <div class="nav-hamburger"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+
+<!-- ═══════════════════ PAGE HERO ═══════════════════ -->
+<section class="page-hero">
+    <div class="page-hero-content">
+        <h1>Nous <span>Contacter</span></h1>
+        <p>Vos questions nous intéressent. Contactez-nous facilement.</p>
+        <div class="breadcrumb">
+            <a href="ecole.html">Accueil</a>
+            <span>/</span>
+            <span>Contact</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
+<section style="padding:90px 5%;">
+    <div class="contact-grid" style="max-width:1100px;margin:0 auto;">
+        <div class="contact-info-card reveal">
+            <h3>Informations de contact</h3>
+            <div class="contact-item">
+                <div class="contact-item-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-item-text">
+                    <p>Adresse</p>
+                    <p>Thiès, Terrain Natanguè, Sénégal</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-item-text">
+                    <p>Téléphone</p>
+                    <p><a href="tel:+221788636577" style="color:rgba(255,255,255,0.8);">+221 78 863 65 77</a></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-item-text">
+                    <p>WhatsApp</p>
+                    <p><a href="https://wa.me/221788636577" style="color:rgba(255,255,255,0.8);" target="_blank">+221 78 863 65 77</a></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-item-text">
+                    <p>Email</p>
+                    <p><a href="mailto:info@lasagesse.sn" style="color:rgba(255,255,255,0.8);">info@lasagesse.sn</a></p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-item-text">
+                    <p>Horaires</p>
+                    <p>Lun-Ven: 8h-17h | Sam: 8h-13h</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-card reveal">
+            <h3>Formulaire de contact</h3>
+            <form>
+                <div class="form-group">
+                    <label for="nom">Nom complet *</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone">
+                </div>
+                <div class="form-group">
+                    <label for="sujet">Sujet *</label>
+                    <select id="sujet" name="sujet" required>
+                        <option value="">-- Sélectionner --</option>
+                        <option value="inscription">Inscription</option>
+                        <option value="renseignements">Renseignements</option>
+                        <option value="visite">Demande de visite</option>
+                        <option value="frais">Questions sur les frais</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;"><i class="fas fa-paper-plane"></i> &nbsp;Envoyer</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ CARTE ═══════════════════ -->
+<section style="background:var(--grey-light); padding:60px 5%;">
+    <div class="reveal">
+        <h2 style="text-align:center; font-size:2rem; color:var(--navy); margin-bottom:40px;">Localisation</h2>
+        <div style="max-width:1100px;margin:0 auto; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow); height:400px; background:var(--grey-mid);">
+            <iframe 
+                src="https://www.google.com/maps?q=Thi%C3%A8s%2C%20Terrain%20Natangu%C3%A8%2C%20S%C3%A9n%C3%A9gal&output=embed" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+<section style="background:linear-gradient(160deg,#f9fafb,#eef0f7);">
+    <div class="section-header reveal">
+        <span class="section-badge">FAQ</span>
+        <h2 class="section-title">Questions fréquemment posées</h2>
+    </div>
+    <div style="max-width:800px; margin:0 auto;" class="reveal">
+        <div class="accordion">
+            <div class="accordion-item open">
+                <button class="accordion-btn" type="button">
+                    <div class="accordion-btn-inner">
+                        <div class="accordion-num">1</div>
+                        <span>Comment s'inscrire à l'école ?</span>
+                    </div>
+                    <div class="accordion-icon">▼</div>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        Pour vous inscrire, contactez-nous par téléphone ou visitez notre établissement. 
+                        Vous devez fournir : un dossier d'inscription complet, les frais d'inscription et les documents requis. 
+                        Nous vous aiderons à préparer votre dossier.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-btn" type="button">
+                    <div class="accordion-btn-inner">
+                        <div class="accordion-num">2</div>
+                        <span>Quels sont les horaires de l'école ?</span>
+                    </div>
+                    <div class="accordion-icon">▼</div>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        L'école est ouverte de 8h00 à 16h30 pour les cours. 
+                        Les études du soir fonctionnent de 16h30 à 18h30. 
+                        Les bureaux administratifs reçoivent les visiteurs de 8h00 à 17h00 (lundi à vendredi).
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-btn" type="button">
+                    <div class="accordion-btn-inner">
+                        <div class="accordion-num">3</div>
+                        <span>Proposez-vous un service de transport ?</span>
+                    </div>
+                    <div class="accordion-icon">▼</div>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        Oui, nous proposons un service de transport scolaire optionnel. 
+                        Un forfait mensuel de 40 000 FCFA est proposé pour le transport aller-retour. 
+                        Contactez notre secrétariat pour plus de détails.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-btn" type="button">
+                    <div class="accordion-btn-inner">
+                        <div class="accordion-num">4</div>
+                        <span>Offrez-vous des repas à l'école ?</span>
+                    </div>
+                    <div class="accordion-icon">▼</div>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        Oui, la restauration scolaire est disponible. 
+                        Les repas sont préparés par notre équipe culinaire selon des normes alimentaires strictes. 
+                        Tarif : 5 000 FCFA par jour en moyenne.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-btn" type="button">
+                    <div class="accordion-btn-inner">
+                        <div class="accordion-num">5</div>
+                        <span>Puis-je bénéficier d'une réduction si j'ai plusieurs enfants ?</span>
+                    </div>
+                    <div class="accordion-icon">▼</div>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        Oui ! Nous offrons des réductions :
+                        <ul style="margin-top:10px;">
+                            <li>10% de réduction pour 2 enfants</li>
+                            <li>15% de réduction pour 3 enfants ou plus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ CTA ═══════════════════ -->
+<section style="background:linear-gradient(135deg,var(--navy),var(--navy-light));padding:70px 5%;text-align:center;">
+    <div class="reveal">
+        <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--white);margin-bottom:20px;">Prêt à rejoindre La Sagesse ?</h2>
+        <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto 30px;">Visitez notre école et découvrez comment nous pouvons transformer l'avenir de votre enfant.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn-primary"><i class="fas fa-phone"></i> &nbsp;Nous appeler</a>
+            <a href="https://wa.me/" class="btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> &nbsp;WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-brand-name">École La Sagesse</div>
+            <div class="footer-brand-sub">Thiès · Sénégal</div>
+            <p class="footer-brand-desc">Former aujourd'hui, bâtir demain. Un établissement d'excellence au service de la jeunesse sénégalaise.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="ecole.html">Accueil</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="elementaire.html">Élémentaire</a></li>
+                <li><a href="college.html">Collège</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Informations</h4>
+            <ul>
+                <li><a href="vie-scolaire.html">Vie scolaire</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="frais.html">Frais scolaires</a></li>
+                <li><a href="actualites.html">Actualités</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Thiès, Sénégal</div>
+            <div class="footer-contact-item"><i class="fas fa-phone"></i> +221 78 863 65 77</div>
+            <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> +221 78 863 65 77</div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@lasagesse.sn</div>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 École La Sagesse – Tous droits réservés</div>
+</footer>
+
+<a href="https://wa.me/221770000000" class="whatsapp-float" target="_blank" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>
