@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>École La Sagesse | Dakar – Élémentaire & Collège</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+/* ================================================================
+   ÉCOLE LA SAGESSE — Fichier unique fusionné
+   Palette : Bleu Marine + Or | Playfair Display + Lato
+   ================================================================ */
+:root {
+    --navy:       #0a1f44;
+    --navy-mid:   #122558;
+    --navy-light: #1a3470;
+    --gold:       #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-pale:  #fdf6e3;
+    --white:      #ffffff;
+    --grey-light: #f4f5f7;
+    --grey-mid:   #e0e4ec;
+    --grey-dark:  #6b7280;
+    --text:       #1a1a2e;
+    --text-light: #4a5568;
+    --shadow:     0 8px 32px rgba(10,31,68,0.12);
+    --radius:     12px;
+    --radius-lg:  20px;
+    --transition: 0.3s ease;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Lato',sans-serif;background:linear-gradient(160deg,#f9fafb 0%,#f0f2f7 60%,#e8ecf4 100%);color:var(--text);line-height:1.7;padding-top:80px;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+
+/* ── NAVIGATION ── */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.3);transition:background .3s;}
+.navbar{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:0 4%;height:80px;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--navy);font-weight:800;font-family:'Playfair Display',serif;flex-shrink:0;box-shadow:0 4px 12px rgba(201,168,76,0.4);}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.nav-logo-name{font-size:1rem;color:var(--white);font-weight:700;}
+.nav-logo-sub{font-size:0.6rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-family:'Lato',sans-serif;}
+.nav-links{display:flex;align-items:center;gap:2px;flex-wrap:wrap;}
+.nav-links a{font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.8);padding:7px 10px;border-radius:6px;transition:var(--transition);letter-spacing:.3px;text-transform:uppercase;position:relative;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-links a.active::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:18px;height:2px;background:var(--gold);border-radius:2px;}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;border-radius:6px!important;box-shadow:0 4px 12px rgba(201,168,76,0.35);}
+.nav-cta:hover{background:var(--gold-light)!important;transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:var(--transition);}
+
+/* ── BOUTON RETOUR EN HAUT ── */
+.back-to-top{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,var(--navy),var(--navy-light));
+    color:var(--gold);border:1px solid rgba(201,168,76,0.3);
+    padding:10px 22px;border-radius:50px;font-size:0.82rem;
+    font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    cursor:pointer;margin:50px auto 0;display:flex;
+    width:fit-content;
+    transition:var(--transition);
+    box-shadow:0 4px 16px rgba(10,31,68,0.2);
+}
+.back-to-top:hover{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border-color:var(--gold);transform:translateY(-2px);}
+.section-end{text-align:center;padding:20px 0 40px;}
+
+/* Séparateur entre sections */
+.section-divider{
+    height:6px;
+    background:linear-gradient(90deg,var(--navy),var(--gold),var(--navy));
+    opacity:.15;
+}
+
+/* ── BOUTONS GÉNÉRIQUES ── */
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:13px 28px;border-radius:8px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;display:inline-block;transition:var(--transition);position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(201,168,76,.35);}
+.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-20deg);transition:left .5s;}
+.btn-primary:hover::after{left:150%;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.5);}
+.btn-outline{background:transparent;color:var(--white);padding:12px 26px;border-radius:8px;font-weight:700;font-size:.9rem;border:2px solid rgba(255,255,255,.5);cursor:pointer;display:inline-block;transition:var(--transition);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+.btn-navy{background:var(--navy);color:var(--white);padding:12px 26px;border-radius:8px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;display:inline-block;transition:var(--transition);box-shadow:0 4px 16px rgba(10,31,68,.25);}
+.btn-navy:hover{background:var(--navy-light);transform:translateY(-2px);}
+
+/* ── SECTIONS ── */
+section{padding:90px 5%;}
+.section-header{text-align:center;margin-bottom:60px;}
+.section-badge{display:inline-block;background:var(--gold-pale);color:var(--gold);border:1px solid rgba(201,168,76,.3);font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:14px;}
+.section-title{font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy);margin-bottom:16px;}
+.section-title::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin:14px auto 0;}
+.section-subtitle{color:var(--text-light);font-size:1rem;max-width:580px;margin:0 auto;}
+
+/* ── HERO ── */
+.hero{min-height:92vh;background:linear-gradient(135deg,rgba(10,31,68,.88) 0%,rgba(18,37,88,.75) 50%,rgba(201,168,76,.3) 100%),url('images/hero.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);padding:60px 5%;position:relative;overflow:hidden;margin-top:-80px;padding-top:140px;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 15% 85%,rgba(201,168,76,.12) 0%,transparent 40%),radial-gradient(circle at 85% 15%,rgba(201,168,76,.08) 0%,transparent 40%);pointer-events:none;}
+.hero-content{position:relative;z-index:1;max-width:800px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:var(--gold);padding:6px 18px;border-radius:50px;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;animation:fadeInDown .8s ease both;}
+.hero-title{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;margin-bottom:10px;animation:fadeInDown .9s ease .15s both;}
+.hero-title span{color:var(--gold);}
+.hero-slogan{font-family:'Lato',sans-serif;font-size:1rem;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:20px;animation:fadeInDown .9s ease .25s both;}
+.hero-desc{font-size:1.1rem;color:rgba(255,255,255,.85);max-width:580px;margin:0 auto 40px;animation:fadeInDown .9s ease .35s both;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInDown .9s ease .45s both;}
+.hero-values{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,.12);animation:fadeInDown .9s ease .55s both;}
+.hero-value{text-align:center;}
+.hero-value-icon{font-size:2rem;margin-bottom:8px;}
+.hero-value-label{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── STATS ── */
+.stats-section{background:linear-gradient(135deg,var(--navy),var(--navy-light));padding:60px 5%;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:1000px;margin:0 auto;text-align:center;}
+.stat-item{position:relative;}
+.stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(201,168,76,.25);}
+.stat-number{font-family:'Playfair Display',serif;font-size:3rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:8px;text-shadow:0 4px 16px rgba(201,168,76,.3);}
+.stat-label{color:rgba(255,255,255,.65);font-size:.85rem;}
+
+/* ── CARTES ── */
+.cards-grid{display:grid;gap:24px;max-width:1280px;margin:0 auto;}
+.cards-grid-2{grid-template-columns:repeat(2,1fr);}
+.cards-grid-3{grid-template-columns:repeat(3,1fr);}
+.cards-grid-4{grid-template-columns:repeat(4,1fr);}
+.card{background:linear-gradient(145deg,#fff,#f5f6fa);border-radius:var(--radius-lg);padding:32px 26px;box-shadow:var(--shadow);border:1px solid rgba(10,31,68,.06);transition:transform .35s cubic-bezier(.175,.885,.32,1.275),box-shadow .35s ease;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(10,31,68,.15);}
+.card:hover::before{transform:scaleX(1);}
+.card-icon{width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;box-shadow:0 6px 18px rgba(10,31,68,.25);transition:transform .4s ease;}
+.card:hover .card-icon{transform:rotate(8deg) scale(1.1);}
+.card h3{font-size:1.15rem;color:var(--navy);margin-bottom:10px;}
+.card p{font-size:.9rem;color:var(--text-light);line-height:1.7;}
+
+/* ── CYCLES ── */
+.cycle-card{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:transform .35s ease,box-shadow .35s ease;background:var(--white);}
+.cycle-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(10,31,68,.18);}
+.cycle-card-top{padding:40px 32px;position:relative;overflow:hidden;}
+.cycle-elem{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);}
+.cycle-college{background:linear-gradient(135deg,#b8860b,var(--gold));color:var(--navy);}
+.cycle-card-top h3{font-size:1.6rem;margin-bottom:8px;}
+.cycle-card-top p{font-size:.9rem;opacity:.85;}
+.cycle-card-classes{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.cycle-class-tag{background:rgba(255,255,255,.2);padding:4px 12px;border-radius:50px;font-size:.78rem;font-weight:700;border:1px solid rgba(255,255,255,.3);}
+.cycle-college .cycle-class-tag{background:rgba(10,31,68,.15);border-color:rgba(10,31,68,.25);}
+.cycle-card-bottom{padding:24px 32px;}
+.cycle-card-bottom ul li{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text-light);padding:6px 0;border-bottom:1px solid var(--grey-mid);}
+.cycle-card-bottom ul li:last-child{border:none;}
+.cycle-card-bottom ul li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+
+/* ── ÉQUIPE ── */
+.team-card{background:linear-gradient(145deg,#fff,#f5f6fa);border-radius:var(--radius-lg);padding:30px 24px;text-align:center;box-shadow:var(--shadow);border:1px solid rgba(10,31,68,.06);transition:transform .35s ease,box-shadow .35s ease;}
+.team-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(10,31,68,.15);}
+.team-avatar{width:90px;height:90px;border-radius:50%;margin:0 auto 16px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--gold);border:3px solid var(--gold);box-shadow:0 6px 20px rgba(201,168,76,.25);}
+.team-name{font-size:1.05rem;color:var(--navy);margin-bottom:4px;}
+.team-role{font-size:.82rem;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-family:'Lato',sans-serif;}
+.team-desc{font-size:.85rem;color:var(--text-light);line-height:1.6;}
+
+/* ── TABLEAU ── */
+.table-wrapper{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;max-width:1280px;margin:0 auto;}
+table{width:100%;border-collapse:collapse;}
+thead tr{background:var(--navy);color:var(--white);}
+thead th{padding:16px 20px;text-align:left;font-size:.85rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+tbody tr{border-bottom:1px solid var(--grey-mid);transition:background .2s;}
+tbody tr:hover{background:var(--gold-pale);}
+tbody td{padding:14px 20px;font-size:.9rem;color:var(--text);}
+tbody td:first-child{font-weight:600;color:var(--navy);}
+tbody tr:last-child{border:none;}
+
+/* ── ACCORDION ── */
+.accordion{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.accordion-item{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border-left:4px solid transparent;transition:border-color .3s;overflow:hidden;}
+.accordion-item.open{border-left-color:var(--gold);}
+.accordion-btn{width:100%;background:none;border:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;transition:background .3s;}
+.accordion-item.open .accordion-btn{background:var(--gold-pale);}
+.accordion-btn-inner{display:flex;align-items:center;gap:14px;}
+.accordion-num{min-width:36px;height:36px;border-radius:8px;background:var(--grey-light);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:800;flex-shrink:0;transition:background .3s,color .3s;}
+.accordion-item.open .accordion-num{background:var(--gold);color:var(--navy);}
+.accordion-btn span{font-weight:700;color:var(--navy);font-size:.95rem;}
+.accordion-icon{width:32px;height:32px;border-radius:50%;background:var(--grey-light);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--navy);flex-shrink:0;transition:transform .35s ease,background .3s;}
+.accordion-item.open .accordion-icon{transform:rotate(180deg);background:var(--gold);color:var(--navy);}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.accordion-item.open .accordion-body{max-height:600px;}
+.accordion-body-inner{padding:4px 22px 22px 72px;color:var(--text-light);font-size:.92rem;line-height:1.85;}
+.accordion-body-inner ul{margin-top:10px;padding-left:18px;list-style:disc;display:flex;flex-direction:column;gap:6px;}
+.accordion-body-inner ul li{color:var(--text);}
+.accordion-body-inner ul li::marker{color:var(--gold);}
+
+/* ── CLUBS ── */
+.club-card{background:linear-gradient(145deg,#fff,#f5f6fa);border-radius:var(--radius-lg);padding:28px 22px;text-align:center;box-shadow:var(--shadow);border:1px solid rgba(10,31,68,.06);transition:transform .35s ease,box-shadow .35s ease;}
+.club-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(10,31,68,.15);}
+.club-icon{font-size:2.8rem;margin-bottom:14px;}
+.club-card h4{font-size:1rem;color:var(--navy);margin-bottom:8px;}
+.club-card p{font-size:.85rem;color:var(--text-light);}
+
+/* ── HORAIRES ── */
+.horaire-card{background:linear-gradient(145deg,#fff,#f5f6fa);border-radius:var(--radius);padding:24px;text-align:center;box-shadow:var(--shadow);border-top:4px solid var(--gold);}
+.horaire-card h4{color:var(--navy);margin-bottom:16px;font-size:1rem;}
+.horaire-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--grey-mid);font-size:.88rem;}
+.horaire-row:last-child{border:none;}
+.horaire-time{font-weight:700;color:var(--gold);}
+
+/* ── GALERIE ── */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1200px;margin:0 auto;}
+.gallery-item{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--grey-mid);box-shadow:var(--shadow);cursor:pointer;}
+.gallery-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--gold);font-size:2.5rem;}
+.gallery-placeholder span{font-size:.8rem;font-family:'Lato',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.6);}
+.gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,31,68,.7) 0%,transparent 50%);display:flex;align-items:flex-end;padding:16px;opacity:0;transition:opacity .3s;}
+.gallery-item:hover .gallery-item-overlay{opacity:1;}
+.gallery-item-label{color:var(--white);font-size:.85rem;font-weight:600;}
+
+/* ── ACTUALITÉS ── */
+.news-card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;}
+.news-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(10,31,68,.15);}
+.news-card-img{height:180px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--gold);}
+.news-card-body{padding:22px;}
+.news-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 12px;border-radius:50px;margin-bottom:10px;}
+.news-date{font-size:.8rem;color:var(--grey-dark);margin-bottom:8px;}
+.news-card-body h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px;}
+.news-card-body p{font-size:.88rem;color:var(--text-light);line-height:1.7;margin-bottom:14px;}
+.news-card-body a{font-size:.85rem;color:var(--gold);font-weight:700;transition:color .2s;}
+.news-card-body a:hover{color:var(--navy);}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;max-width:1100px;margin:0 auto;align-items:start;}
+.contact-info-card{background:linear-gradient(145deg,var(--navy),var(--navy-light));border-radius:var(--radius-lg);padding:40px 32px;color:var(--white);}
+.contact-info-card h3{color:var(--gold);margin-bottom:28px;font-size:1.3rem;}
+.contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1);}
+.contact-item:last-child{border:none;margin:0;padding:0;}
+.contact-item-icon{width:42px;height:42px;border-radius:10px;flex-shrink:0;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.contact-item-text p:first-child{font-weight:700;color:var(--gold);font-size:.78rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.contact-item-text p:last-child{font-size:.9rem;color:rgba(255,255,255,.8);}
+.contact-form-card{background:linear-gradient(145deg,#fff,#f5f6fa);border-radius:var(--radius-lg);padding:40px 32px;box-shadow:var(--shadow);}
+.contact-form-card h3{color:var(--navy);margin-bottom:24px;font-size:1.3rem;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:5px;letter-spacing:.3px;text-transform:uppercase;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:2px solid var(--grey-mid);border-radius:8px;font-family:'Lato',sans-serif;font-size:.92rem;color:var(--text);background:var(--white);transition:border-color .3s,box-shadow .3s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.15);}
+.form-group textarea{height:110px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 5% 24px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;max-width:1280px;margin:0 auto 40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);margin-bottom:4px;}
+.footer-brand-sub{font-size:.75rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.footer-brand-desc{font-size:.87rem;line-height:1.7;}
+.footer-col h4{color:var(--white);font-size:.88rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;font-family:'Lato',sans-serif;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-size:.87rem;transition:color .2s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-contact-item{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:.87rem;}
+.footer-contact-item i{color:var(--gold);width:16px;}
+.footer-bottom{text-align:center;font-size:.82rem;color:rgba(255,255,255,.4);max-width:1280px;margin:0 auto;}
+
+/* ── WHATSAPP ── */
+.whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25d366;color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 6px 24px rgba(37,211,102,.45);animation:waPulse 2.5s ease-in-out infinite;transition:transform .2s;}
+.whatsapp-float:hover{transform:scale(1.12);animation:none;}
+@keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}60%{box-shadow:0 0 0 12px rgba(37,211,102,0);}}
+
+/* ── REVEAL AU SCROLL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.delay-1{transition-delay:.08s;}
+.delay-2{transition-delay:.16s;}
+.delay-3{transition-delay:.24s;}
+.delay-4{transition-delay:.32s;}
+
+/* ── PAGE HERO INTERNE ── */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);padding:70px 5% 60px;text-align:center;color:var(--white);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 50%,rgba(201,168,76,.12) 0%,transparent 60%);}
+.page-hero-content{position:relative;z-index:1;}
+.page-hero h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px;}
+.page-hero h2 span{color:var(--gold);}
+.page-hero p{color:rgba(255,255,255,.75);font-size:1rem;max-width:500px;margin:0 auto;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.cards-grid-4{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;}.stats-grid{grid-template-columns:repeat(2,1fr);}.stat-item:nth-child(2)::after{display:none;}}
+@media(max-width:768px){body{padding-top:70px;}.navbar{height:70px;}.nav-links{display:none;flex-direction:column;position:fixed;top:70px;left:0;width:100%;background:var(--navy);padding:20px 5%;gap:4px;}.nav-links.open{display:flex;}.nav-hamburger{display:flex;}.hero{min-height:80vh;}.hero-values{gap:20px;}.cards-grid-3,.cards-grid-2,.cards-grid-4{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.gallery-grid{grid-template-columns:repeat(2,1fr);}.stats-grid{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr;gap:28px;}.form-row{grid-template-columns:1fr;}}
+@media(max-width:480px){section{padding:60px 4%;}.gallery-grid{grid-template-columns:1fr;}.hero-title{font-size:2rem;}}
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<header>
+    <nav class="navbar">
+        <a href="#accueil" class="nav-logo">
+            <div class="nav-logo-icon">S</div>
+            <div class="nav-logo-text">
+                <span class="nav-logo-name">La Sagesse</span>
+                <span class="nav-logo-sub">École Privée · Dakar</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#elementaire">Élémentaire</a></li>
+            <li><a href="#college">Collège</a></li>
+            <li><a href="#vie-scolaire">Vie scolaire</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#frais">Frais</a></li>
+            <li><a href="#actualites">Actualités</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+        <div class="nav-hamburger"><span></span><span></span><span></span></div>
+    </nav>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1 — ACCUEIL
+═══════════════════════════════════════════ -->
+<section id="accueil" class="hero">
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i> Établissement privé agréé – Dakar, Sénégal</div>
+        <h1 class="hero-title">École <span>La Sagesse</span></h1>
+        <p class="hero-slogan">Former aujourd'hui · Bâtir demain</p>
+        <p class="hero-desc">Notre établissement accueille les élèves du CI à la 3e avec un encadrement de qualité, une pédagogie rigoureuse et un environnement épanouissant.</p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn-primary"><i class="fas fa-pen-to-square"></i>&nbsp; Inscription ouverte 2025</a>
+            <a href="#frais" class="btn-outline"><i class="fas fa-file-alt"></i>&nbsp; Fiche d'inscription</a>
+        </div>
+        <div class="hero-values">
+            <div class="hero-value"><div class="hero-value-icon">🎓</div><div class="hero-value-label">Excellence</div></div>
+            <div class="hero-value"><div class="hero-value-icon">⚖️</div><div class="hero-value-label">Discipline</div></div>
+            <div class="hero-value"><div class="hero-value-icon">🤝</div><div class="hero-value-label">Respect</div></div>
+            <div class="hero-value"><div class="hero-value-icon">💡</div><div class="hero-value-label">Innovation</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item"><div class="stat-number" data-target="500" data-suffix="+">0+</div><div class="stat-label">Élèves formés</div></div>
+        <div class="stat-item"><div class="stat-number" data-target="2">0</div><div class="stat-label">Cycles d'enseignement</div></div>
+        <div class="stat-item"><div class="stat-number" data-target="98" data-suffix="%">0%</div><div class="stat-label">Taux de réussite</div></div>
+        <div class="stat-item"><div class="stat-number" data-target="20" data-suffix="+">0+</div><div class="stat-label">Enseignants qualifiés</div></div>
+    </div>
+</div>
+
+<!-- Cycles accueil -->
+<section style="background:linear-gradient(160deg,#f9fafb,#eef0f7);">
+    <div class="section-header reveal">
+        <span class="section-badge">Nos formations</span>
+        <h2 class="section-title">Deux cycles d'excellence</h2>
+        <p class="section-subtitle">Du CI à la 3e, nous accompagnons chaque élève vers la réussite aux examens nationaux.</p>
+    </div>
+    <div class="cards-grid cards-grid-2" style="max-width:900px;margin:0 auto;">
+        <div class="cycle-card reveal delay-1">
+            <div class="cycle-card-top cycle-elem">
+                <div style="font-size:2.5rem;margin-bottom:12px;">📚</div>
+                <h3>Cycle Élémentaire</h3>
+                <p>Acquisition des fondamentaux et préparation au CFEE</p>
+                <div class="cycle-card-classes"><span class="cycle-class-tag">CI</span><span class="cycle-class-tag">CP</span><span class="cycle-class-tag">CE1</span><span class="cycle-class-tag">CE2</span><span class="cycle-class-tag">CM1</span><span class="cycle-class-tag">CM2</span></div>
+            </div>
+            <div class="cycle-card-bottom">
+                <ul><li>Lecture, écriture et calcul renforcés</li><li>Éveil scientifique et artistique</li><li>Préparation sérieuse au CFEE</li><li>Suivi individualisé de chaque élève</li></ul>
+                <a href="#elementaire" class="btn-navy" style="display:inline-block;margin-top:20px;">Découvrir le cycle →</a>
+            </div>
+        </div>
+        <div class="cycle-card reveal delay-2">
+            <div class="cycle-card-top cycle-college">
+                <div style="font-size:2.5rem;margin-bottom:12px;">🏛️</div>
+                <h3>Cycle Collège</h3>
+                <p>Approfondissement académique et préparation au BFEM</p>
+                <div class="cycle-card-classes"><span class="cycle-class-tag">6e</span><span class="cycle-class-tag">5e</span><span class="cycle-class-tag">4e</span><span class="cycle-class-tag">3e</span></div>
+            </div>
+            <div class="cycle-card-bottom">
+                <ul><li>Enseignement pluridisciplinaire de qualité</li><li>Professeurs spécialisés par matière</li><li>Préparation intensive au BFEM</li><li>Activités parascolaires encadrées</li></ul>
+                <a href="#college" class="btn-primary" style="display:inline-block;margin-top:20px;">Découvrir le cycle →</a>
+            </div>
+        </div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2 — À PROPOS
+═══════════════════════════════════════════ -->
+<section id="apropos" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content">
+            <h2>À propos de <span>La Sagesse</span></h2>
+            <p>Notre histoire, notre mission et notre équipe au service de l'excellence</p>
+        </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1100px;margin:0 auto;align-items:center;" class="reveal">
+        <div class="reveal-left">
+            <span class="section-badge">Notre histoire</span>
+            <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);margin:14px 0 20px;">Une école fondée sur la transmission du savoir</h2>
+            <p style="color:var(--text-light);line-height:1.9;margin-bottom:16px;">L'École La Sagesse a été créée avec une conviction profonde : chaque enfant mérite un environnement éducatif bienveillant, rigoureux et stimulant. Fondée à Dakar, notre établissement a su, au fil des années, bâtir une réputation d'excellence académique reconnue par les familles et les autorités éducatives.</p>
+            <p style="color:var(--text-light);line-height:1.9;margin-bottom:24px;">De l'élémentaire au collège, nous accueillons des élèves de tous horizons et les guidons vers la réussite aux examens nationaux – CFEE et BFEM – avec un taux de succès exemplaire.</p>
+        </div>
+        <div class="reveal-right" style="background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:24px;padding:40px;color:var(--white);">
+            <div style="font-size:3rem;margin-bottom:16px;">🏛️</div>
+            <h3 style="color:var(--gold);font-size:1.4rem;margin-bottom:16px;">Notre Mission</h3>
+            <p style="color:rgba(255,255,255,.8);line-height:1.85;margin-bottom:20px;">Former des élèves complets, capables de réussir académiquement et de s'épanouir comme citoyens responsables dans la société sénégalaise et africaine.</p>
+            <h3 style="color:var(--gold);font-size:1.4rem;margin-bottom:16px;">Notre Vision</h3>
+            <p style="color:rgba(255,255,255,.8);line-height:1.85;">Être le référentiel de l'éducation privée de qualité au Sénégal, reconnu pour l'excellence académique, les valeurs humaines et l'innovation pédagogique.</p>
+        </div>
+    </div>
+</section>
+
+<section style="background:linear-gradient(160deg,#f9fafb,#eef0f7);">
+    <div class="section-header reveal"><span class="section-badge">Ce qui nous définit</span><h2 class="section-title">Nos valeurs fondamentales</h2></div>
+    <div class="cards-grid cards-grid-3" style="max-width:1000px;margin:0 auto;">
+        <div class="card reveal delay-1" style="text-align:center;"><div class="card-icon" style="margin:0 auto 20px;background:linear-gradient(135deg,var(--gold),var(--gold-light));">🎓</div><h3>Excellence</h3><p>Viser toujours le meilleur, en termes de résultats scolaires, de comportement et de développement personnel.</p></div>
+        <div class="card reveal delay-2" style="text-align:center;"><div class="card-icon" style="margin:0 auto 20px;"><i class="fas fa-balance-scale" style="color:var(--gold);"></i></div><h3>Discipline</h3><p>Un cadre structuré et bienveillant où chaque élève apprend la rigueur, la ponctualité et le respect des règles.</p></div>
+        <div class="card reveal delay-3" style="text-align:center;"><div class="card-icon" style="margin:0 auto 20px;"><i class="fas fa-handshake" style="color:var(--gold);"></i></div><h3>Respect</h3><p>Le respect mutuel entre élèves, enseignants et familles comme socle de notre communauté éducative.</p></div>
+    </div>
+</section>
+
+<section>
+    <div class="section-header reveal"><span class="section-badge">Les personnes qui nous guident</span><h2 class="section-title">Notre équipe dirigeante</h2></div>
+    <div class="cards-grid cards-grid-4" style="max-width:1100px;margin:0 auto;">
+        <div class="team-card reveal delay-1"><div class="team-avatar"><i class="fas fa-user-tie"></i></div><div class="team-name">M. Ibrahima Diallo</div><div class="team-role">Directeur</div><p class="team-desc">Inspecteur de l'Enseignement, 20 ans d'expérience dans l'éducation nationale.</p></div>
+        <div class="team-card reveal delay-2"><div class="team-avatar"><i class="fas fa-user-shield"></i></div><div class="team-name">M. Moussa Sarr</div><div class="team-role">Surveillant Général</div><p class="team-desc">Garant de la discipline et du bon déroulement de la vie scolaire au quotidien.</p></div>
+        <div class="team-card reveal delay-3"><div class="team-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);"><i class="fas fa-user"></i></div><div class="team-name">Mme Fatou Ndiaye</div><div class="team-role">Secrétariat</div><p class="team-desc">Premier contact des familles, elle assure l'accueil et la gestion administrative.</p></div>
+        <div class="team-card reveal delay-4"><div class="team-avatar"><i class="fas fa-calculator"></i></div><div class="team-name">M. Oumar Ba</div><div class="team-role">Comptabilité</div><p class="team-desc">Gestion transparente des finances et accompagnement des familles pour les paiements.</p></div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 3 — ÉLÉMENTAIRE
+═══════════════════════════════════════════ -->
+<section id="elementaire" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content">
+            <h2>Cycle <span>Élémentaire</span></h2>
+            <p>Du CI au CM2 — Poser les bases d'une scolarité réussie</p>
+        </div>
+    </div>
+
+    <div class="section-header reveal"><span class="section-badge">Nos classes</span><h2 class="section-title">6 niveaux du CI au CM2</h2></div>
+    <div class="cards-grid cards-grid-3" style="max-width:1100px;margin:0 auto;">
+        <div class="card reveal delay-1" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:14px;">🌱</div><h3>CI – CP</h3><p>Initiation à la lecture, à l'écriture et aux chiffres. Apprentissage ludique et bienveillant.</p></div>
+        <div class="card reveal delay-2" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:14px;">📖</div><h3>CE1 – CE2</h3><p>Consolidation des acquis en français et mathématiques. Éveil à l'histoire et à la géographie.</p></div>
+        <div class="card reveal delay-3" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:14px;">🎓</div><h3>CM1 – CM2</h3><p>Approfondissement et préparation sérieuse au CFEE.</p></div>
+    </div>
+</section>
+
+<section style="background:linear-gradient(160deg,#f9fafb,#eef0f7);">
+    <div class="section-header reveal"><span class="section-badge">Programme scolaire</span><h2 class="section-title">Matières enseignées</h2></div>
+    <div class="table-wrapper reveal" style="max-width:900px;margin:0 auto;">
+        <table>
+            <thead><tr><th>Matière</th><th>Niveau</th><th>Volume horaire</th></tr></thead>
+            <tbody>
+                <tr><td>Français (lecture, écriture, grammaire)</td><td>CI au CM2</td><td>10h / semaine</td></tr>
+                <tr><td>Mathématiques (calcul, problèmes)</td><td>CI au CM2</td><td>8h / semaine</td></tr>
+                <tr><td>Sciences d'observation / SVT</td><td>CE1 au CM2</td><td>2h / semaine</td></tr>
+                <tr><td>Histoire – Géographie</td><td>CE1 au CM2</td><td>2h / semaine</td></tr>
+                <tr><td>Éducation civique et morale</td><td>CI au CM2</td><td>1h / semaine</td></tr>
+                <tr><td>Éducation physique et sportive</td><td>CI au CM2</td><td>2h / semaine</td></tr>
+                <tr><td>Arts plastiques / Dessin</td><td>CI au CM2</td><td>1h / semaine</td></tr>
+                <tr><td>Informatique (initiation)</td><td>CE2 au CM2</td><td>1h / semaine</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="section-header reveal"><span class="section-badge">Notre équipe</span><h2 class="section-title">Enseignants de l'élémentaire</h2></div>
+    <div class="cards-grid cards-grid-4" style="max-width:1100px;margin:0 auto;">
+        <div class="team-card reveal delay-1"><div class="team-avatar"><i class="fas fa-user"></i></div><div class="team-name">Mme Aïssatou Diop</div><div class="team-role">CI – CP</div><p class="team-desc">Institutrice diplômée, spécialisée dans l'éveil des tout-petits.</p></div>
+        <div class="team-card reveal delay-2"><div class="team-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);"><i class="fas fa-user"></i></div><div class="team-name">M. Cheikh Mbaye</div><div class="team-role">CE1 – CE2</div><p class="team-desc">10 ans d'expérience, passionné de mathématiques et de sciences.</p></div>
+        <div class="team-card reveal delay-3"><div class="team-avatar"><i class="fas fa-user"></i></div><div class="team-name">Mme Ndèye Fall</div><div class="team-role">CM1</div><p class="team-desc">Spécialiste en français et expression écrite.</p></div>
+        <div class="team-card reveal delay-4"><div class="team-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);"><i class="fas fa-user"></i></div><div class="team-name">M. Abdou Sow</div><div class="team-role">CM2 – CFEE</div><p class="team-desc">100% de réussite au CFEE ces 5 dernières années.</p></div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 4 — COLLÈGE
+═══════════════════════════════════════════ -->
+<section id="college" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content">
+            <h2>Cycle <span>Collège</span></h2>
+            <p>De la 6e à la 3e — Vers le BFEM et au-delà</p>
+        </div>
+    </div>
+
+    <div class="section-header reveal"><span class="section-badge">Nos niveaux</span><h2 class="section-title">4 classes du collège</h2></div>
+    <div class="cards-grid cards-grid-4" style="max-width:1100px;margin:0 auto;">
+        <div class="card reveal delay-1" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:12px;">📘</div><h3>6e</h3><p>Transition et adaptation au rythme collège, renforcement des bases.</p></div>
+        <div class="card reveal delay-2" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:12px;">📗</div><h3>5e</h3><p>Approfondissement en maths, français, anglais et sciences naturelles.</p></div>
+        <div class="card reveal delay-3" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:12px;">📙</div><h3>4e</h3><p>Introduction à la physique-chimie et renforcement de l'anglais.</p></div>
+        <div class="card reveal delay-4" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:12px;">🏆</div><h3>3e – BFEM</h3><p>Révisions intensives et examens blancs pour la réussite au BFEM.</p></div>
+    </div>
+</section>
+
+<section style="background:linear-gradient(160deg,#f9fafb,#eef0f7);">
+    <div class="section-header reveal"><span class="section-badge">Programme</span><h2 class="section-title">Matières enseignées au collège</h2></div>
+    <div class="table-wrapper reveal" style="max-width:950px;margin:0 auto;">
+        <table>
+            <thead><tr><th>Matière</th><th>Niveaux</th><th>Volume horaire</th></tr></thead>
+            <tbody>
+                <tr><td>Français</td><td>6e à 3e</td><td>5h / semaine</td></tr>
+                <tr><td>Mathématiques</td><td>6e à 3e</td><td>5h / semaine</td></tr>
+                <tr><td>Anglais</td><td>6e à 3e</td><td>4h / semaine</td></tr>
+                <tr><td>Sciences de la Vie et de la Terre</td><td>6e à 3e</td><td>3h / semaine</td></tr>
+                <tr><td>Physique – Chimie</td><td>4e à 3e</td><td>3h / semaine</td></tr>
+                <tr><td>Histoire – Géographie</td><td>6e à 3e</td><td>3h / semaine</td></tr>
+                <tr><td>Informatique</td><td>6e à 3e</td><td>2h / semaine</td></tr>
+                <tr><td>Éducation physique et sportive</td><td>6e à 3e</td><td>2h / semaine</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="section-header reveal"><span class="section-badge">Notre équipe</span><h2 class="section-title">Professeurs du collège</h2></div>
+    <div class="cards-grid cards-grid-3" style="max-width:1000px;margin:0 auto;">
+        <div class="team-card reveal delay-1"><div class="team-avatar"><i class="fas fa-user"></i></div><div class="team-name">M. Lamine Diallo</div><div class="team-role">Mathématiques</div><p class="team-desc">Ingénieur de formation, passionné de pédagogie mathématique.</p></div>
+        <div class="team-card reveal delay-2"><div class="team-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);"><i class="fas fa-user"></i></div><div class="team-name">Mme Coumba Seck</div><div class="team-role">Français & Littérature</div><p class="team-desc">Licenciée en Lettres, 15 ans d'expérience au collège.</p></div>
+        <div class="team-card reveal delay-3"><div class="team-avatar"><i class="fas fa-user"></i></div><div class="team-name">M. David Gomis</div><div class="team-role">Anglais</div><p class="team-desc">Certifié TEFL, méthode communicative et immersive.</p></div>
+        <div class="team-card reveal delay-1"><div class="team-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);"><i class="fas fa-user"></i></div><div class="team-name">Mme Rokhaya Niang</div><div class="team-role">SVT</div><p class="team-desc">Biologiste, rend les sciences vivantes et accessibles.</p></div>
+        <div class="team-card reveal delay-2"><div class="team-avatar"><i class="fas fa-user"></i></div><div class="team-name">M. Serigne Mbaye</div><div class="team-role">Physique – Chimie</div><p class="team-desc">Docteur en chimie, spécialiste de la préparation au BFEM.</p></div>
+        <div class="team-card reveal delay-3"><div class="team-avatar" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);"><i class="fas fa-user"></i></div><div class="team-name">M. Ibou Badji</div><div class="team-role">Histoire – Géographie</div><p class="team-desc">Géographe passionné, cours dynamiques et documentés.</p></div>
+    </div>
+
+    <!-- BFEM highlight -->
+    <div style="background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:24px;padding:50px 40px;text-align:center;max-width:900px;margin:60px auto 0;" class="reveal">
+        <div style="font-size:3rem;margin-bottom:16px;">🏅</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--white);margin-bottom:14px;">Le BFEM — Notre fierté</h3>
+        <p style="color:rgba(255,255,255,.75);max-width:580px;margin:0 auto 30px;">Taux de réussite au BFEM supérieur à 95% chaque année, grâce à une préparation rigoureuse et des révisions intensives dès la 4e.</p>
+        <div style="display:flex;justify-content:center;gap:50px;flex-wrap:wrap;">
+            <div><div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:var(--gold);">95%+</div><div style="color:rgba(255,255,255,.6);font-size:.85rem;">Taux de réussite</div></div>
+            <div><div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:var(--gold);">3</div><div style="color:rgba(255,255,255,.6);font-size:.85rem;">Examens blancs / an</div></div>
+            <div><div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:var(--gold);">100%</div><div style="color:rgba(255,255,255,.6);font-size:.85rem;">Élèves présentés</div></div>
+        </div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 5 — VIE SCOLAIRE
+═══════════════════════════════════════════ -->
+<section id="vie-scolaire" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content">
+            <h2>Vie <span>Scolaire</span></h2>
+            <p>Discipline, activités et épanouissement au quotidien</p>
+        </div>
+    </div>
+
+    <div class="section-header reveal"><span class="section-badge">Organisation</span><h2 class="section-title">Horaires des cours</h2></div>
+    <div class="cards-grid cards-grid-2" style="max-width:900px;margin:0 auto;">
+        <div class="horaire-card reveal delay-1"><h4>📚 Cycle Élémentaire</h4><div class="horaire-row"><span>Lundi – Vendredi matin</span><span class="horaire-time">7h45 – 12h30</span></div><div class="horaire-row"><span>Après-midi</span><span class="horaire-time">14h30 – 17h00</span></div><div class="horaire-row"><span>Samedi matin</span><span class="horaire-time">7h45 – 12h00</span></div></div>
+        <div class="horaire-card reveal delay-2"><h4>🏛️ Cycle Collège</h4><div class="horaire-row"><span>Lundi – Vendredi matin</span><span class="horaire-time">8h00 – 13h00</span></div><div class="horaire-row"><span>Après-midi</span><span class="horaire-time">15h00 – 18h00</span></div><div class="horaire-row"><span>Samedi matin</span><span class="horaire-time">8h00 – 12h00</span></div></div>
+    </div>
+</section>
+
+<section style="background:linear-gradient(160deg,#f9fafb,#eef0f7);">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1000px;margin:0 auto;">
+        <div class="reveal-left">
+            <span class="section-badge">Tenue obligatoire</span>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin:14px 0 20px;">Uniforme scolaire</h2>
+            <div class="card" style="margin-bottom:14px;"><div style="display:flex;gap:14px;align-items:center;"><div style="font-size:1.8rem;">👔</div><div><h4 style="color:var(--navy);margin-bottom:4px;">Garçons</h4><p style="font-size:.88rem;color:var(--text-light);">Chemise blanche + Pantalon bleu marine + Ceinture noire + Chaussures noires</p></div></div></div>
+            <div class="card"><div style="display:flex;gap:14px;align-items:center;"><div style="font-size:1.8rem;">👗</div><div><h4 style="color:var(--navy);margin-bottom:4px;">Filles</h4><p style="font-size:.88rem;color:var(--text-light);">Chemisier blanc + Jupe bleu marine (sous le genou) + Chaussures noires</p></div></div></div>
+        </div>
+        <div class="reveal-right">
+            <span class="section-badge">Notre règlement</span>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin:14px 0 20px;">Règlement intérieur</h2>
+            <div class="accordion">
+                <div class="accordion-item"><button class="accordion-btn"><div class="accordion-btn-inner"><span class="accordion-num">📌</span><span>Ponctualité obligatoire</span></div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></button><div class="accordion-body"><div class="accordion-body-inner">Les élèves doivent être présents 10 minutes avant le début des cours. Tout retard injustifié est signalé aux parents.</div></div></div>
+                <div class="accordion-item"><button class="accordion-btn"><div class="accordion-btn-inner"><span class="accordion-num">📌</span><span>Respect mutuel</span></div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></button><div class="accordion-body"><div class="accordion-body-inner">Le respect entre élèves et envers les enseignants est non négociable. Tout comportement irrespectueux est sanctionné.</div></div></div>
+                <div class="accordion-item"><button class="accordion-btn"><div class="accordion-btn-inner"><span class="accordion-num">📌</span><span>Téléphones interdits en classe</span></div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></button><div class="accordion-body"><div class="accordion-body-inner">Les téléphones portables sont formellement interdits en classe.</div></div></div>
+                <div class="accordion-item"><button class="accordion-btn"><div class="accordion-btn-inner"><span class="accordion-num">📌</span><span>Propreté et tenue correcte</span></div><div class="accordion-icon"><i class="fas fa-chevron-down"></i></div></button><div class="accordion-body"><div class="accordion-body-inner">L'uniforme doit être propre et complet chaque jour. La propreté des locaux est la responsabilité de tous.</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-header reveal"><span class="section-badge">Épanouissement</span><h2 class="section-title">Clubs & Activités parascolaires</h2></div>
+    <div class="cards-grid cards-grid-3" style="max-width:1000px;margin:0 auto;">
+        <div class="club-card reveal delay-1"><div class="club-icon">💻</div><h4>Club Informatique</h4><p>Initiation à la programmation et aux outils bureautiques.</p></div>
+        <div class="club-card reveal delay-2"><div class="club-icon">⚽</div><h4>Club Sport</h4><p>Football, athlétisme et sports collectifs pour l'esprit d'équipe.</p></div>
+        <div class="club-card reveal delay-3"><div class="club-icon">🎭</div><h4>Club Théâtre</h4><p>Expression orale, confiance en soi et créativité.</p></div>
+        <div class="club-card reveal delay-1"><div class="club-icon">🎵</div><h4>Club Musique</h4><p>Chants et percussions traditionnelles africaines et modernes.</p></div>
+        <div class="club-card reveal delay-2"><div class="club-icon">📚</div><h4>Club Lecture</h4><p>Animations autour des livres et débats littéraires.</p></div>
+        <div class="club-card reveal delay-3"><div class="club-icon">🌍</div><h4>Sorties scolaires</h4><p>Visites culturelles et éducatives dans la région de Dakar.</p></div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 6 — GALERIE
+═══════════════════════════════════════════ -->
+<section id="galerie" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content"><h2>Notre <span>Galerie</span></h2><p>La vie à l'École La Sagesse en images</p></div>
+    </div>
+    <div class="section-header reveal"><span class="section-badge">Moments de vie</span><h2 class="section-title">Photos de l'école</h2></div>
+    <div class="gallery-grid reveal">
+        <div class="gallery-item"><div class="gallery-placeholder"><span>🏫</span><span>Façade de l'école</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">Notre établissement</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#1a3470,#0a1f44);"><span>📚</span><span>Salle de classe</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">En classe</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#b8860b,#c9a84c);"><span>⚽</span><span>Cour de récréation</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">La cour</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#122558,#1a3470);"><span>🏆</span><span>Remise de prix</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">Remise de prix</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder"><span>🎭</span><span>Spectacle</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">Théâtre scolaire</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#c9a84c,#e8c96a);"><span>💻</span><span>Informatique</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">Club informatique</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#0a1f44,#1a3470);"><span>🌍</span><span>Sortie scolaire</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">Sortie éducative</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#1a3470,#122558);"><span>🎵</span><span>Musique</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">Activité musicale</span></div></div>
+        <div class="gallery-item"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#b8860b,#c9a84c);"><span>📖</span><span>Lecture</span></div><div class="gallery-item-overlay"><span class="gallery-item-label">Club lecture</span></div></div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 7 — FRAIS SCOLAIRES
+═══════════════════════════════════════════ -->
+<section id="frais" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content"><h2>Frais <span>Scolaires</span></h2><p>Toutes les informations financières pour l'année 2025–2026</p></div>
+    </div>
+
+    <div class="section-header reveal"><span class="section-badge">Cycle Élémentaire</span><h2 class="section-title">Frais – Élémentaire (CI au CM2)</h2></div>
+    <div class="table-wrapper reveal" style="max-width:800px;margin:0 auto;">
+        <table>
+            <thead><tr><th>Type de frais</th><th>Montant (FCFA)</th><th>Remarques</th></tr></thead>
+            <tbody>
+                <tr><td>Frais d'inscription</td><td>25 000 F</td><td>Non remboursable</td></tr>
+                <tr><td>Scolarité mensuelle CI–CP</td><td>15 000 F / mois</td><td>10 mensualités</td></tr>
+                <tr><td>Scolarité mensuelle CE1–CE2</td><td>18 000 F / mois</td><td>10 mensualités</td></tr>
+                <tr><td>Scolarité mensuelle CM1–CM2</td><td>20 000 F / mois</td><td>10 mensualités</td></tr>
+                <tr><td>Frais d'examen CFEE</td><td>10 000 F</td><td>CM2 uniquement</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section style="background:linear-gradient(160deg,#f9fafb,#eef0f7);">
+    <div class="section-header reveal"><span class="section-badge">Cycle Collège</span><h2 class="section-title">Frais – Collège (6e à 3e)</h2></div>
+    <div class="table-wrapper reveal" style="max-width:800px;margin:0 auto;">
+        <table>
+            <thead><tr><th>Type de frais</th><th>Montant (FCFA)</th><th>Remarques</th></tr></thead>
+            <tbody>
+                <tr><td>Frais d'inscription</td><td>30 000 F</td><td>Non remboursable</td></tr>
+                <tr><td>Scolarité mensuelle 6e–5e</td><td>22 000 F / mois</td><td>10 mensualités</td></tr>
+                <tr><td>Scolarité mensuelle 4e–3e</td><td>25 000 F / mois</td><td>10 mensualités</td></tr>
+                <tr><td>Frais d'examen BFEM</td><td>15 000 F</td><td>3e uniquement</td></tr>
+                <tr><td>Frais informatique</td><td>5 000 F / an</td><td>Accès salle informatique</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="section-header reveal"><span class="section-badge">Modalités</span><h2 class="section-title">Modes de paiement</h2></div>
+    <div class="cards-grid cards-grid-3" style="max-width:1000px;margin:0 auto;">
+        <div class="card reveal delay-1" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:14px;">💵</div><h3>Espèces</h3><p>Au secrétariat, du lundi au samedi de 8h à 13h.</p></div>
+        <div class="card reveal delay-2" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:14px;">📱</div><h3>Mobile Money</h3><p>Wave et Orange Money acceptés. Envoyez le reçu au secrétariat.</p></div>
+        <div class="card reveal delay-3" style="text-align:center;"><div style="font-size:2.5rem;margin-bottom:14px;">🤝</div><h3>Facilités</h3><p>Des arrangements peuvent être accordés selon la situation de la famille.</p></div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 8 — ACTUALITÉS
+═══════════════════════════════════════════ -->
+<section id="actualites" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content"><h2>Actualités <span>& Blog</span></h2><p>Résultats, informations aux parents et nouveaux projets</p></div>
+    </div>
+    <div class="section-header reveal"><span class="section-badge">Dernières nouvelles</span><h2 class="section-title">Informations récentes</h2></div>
+    <div class="cards-grid cards-grid-3" style="max-width:1100px;margin:0 auto;">
+        <div class="news-card reveal delay-1"><div class="news-card-img">🏆</div><div class="news-card-body"><span class="news-tag">Résultats</span><div class="news-date">Juillet 2025</div><h3>BFEM 2025 — 97% de réussite !</h3><p>Nos élèves de 3e ont brillé avec un taux de réussite exceptionnel. Félicitations à tous !</p><a href="#">Lire la suite →</a></div></div>
+        <div class="news-card reveal delay-2"><div class="news-card-img" style="background:linear-gradient(135deg,#b8860b,var(--gold));">📅</div><div class="news-card-body"><span class="news-tag">Rentrée</span><div class="news-date">Août 2025</div><h3>Rentrée 2025–2026 : date et infos</h3><p>La rentrée aura lieu le lundi 6 octobre 2025. Les inscriptions sont ouvertes jusqu'au 30 septembre.</p><a href="#">Lire la suite →</a></div></div>
+        <div class="news-card reveal delay-3"><div class="news-card-img" style="background:linear-gradient(135deg,var(--navy-light),var(--navy));">💻</div><div class="news-card-body"><span class="news-tag">Projet</span><div class="news-date">Septembre 2025</div><h3>Salle informatique rénovée</h3><p>20 nouveaux ordinateurs et une connexion Internet haut débit pour tous les élèves.</p><a href="#">Lire la suite →</a></div></div>
+        <div class="news-card reveal delay-1"><div class="news-card-img">📣</div><div class="news-card-body"><span class="news-tag">Parents</span><div class="news-date">Octobre 2025</div><h3>Réunion parents-professeurs</h3><p>La réunion du 1er trimestre aura lieu le samedi 25 octobre 2025 à partir de 9h.</p><a href="#">Lire la suite →</a></div></div>
+        <div class="news-card reveal delay-2"><div class="news-card-img" style="background:linear-gradient(135deg,#b8860b,var(--gold));">⚽</div><div class="news-card-body"><span class="news-tag">Sport</span><div class="news-date">Novembre 2025</div><h3>Tournoi inter-écoles de football</h3><p>Notre équipe participera au tournoi inter-écoles de Dakar en novembre.</p><a href="#">Lire la suite →</a></div></div>
+        <div class="news-card reveal delay-3"><div class="news-card-img" style="background:linear-gradient(135deg,var(--navy-light),var(--navy));">🎓</div><div class="news-card-body"><span class="news-tag">Résultats</span><div class="news-date">Juillet 2025</div><h3>CFEE 2025 — 100% de réussite !</h3><p>Tous nos élèves de CM2 ont obtenu leur certificat. Un résultat historique !</p><a href="#">Lire la suite →</a></div></div>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 9 — CONTACT & INSCRIPTION
+═══════════════════════════════════════════ -->
+<section id="contact" style="padding-top:100px;">
+    <div class="page-hero" style="margin:-90px -5% 60px;padding:70px 5% 60px;">
+        <div class="page-hero-content"><h2>Contact & <span>Inscription</span></h2><p>Nous sommes à votre disposition pour toute question ou demande d'inscription</p></div>
+    </div>
+
+    <div class="contact-grid reveal">
+        <div class="contact-info-card">
+            <h3>Nos coordonnées</h3>
+            <div class="contact-item"><div class="contact-item-icon">📍</div><div class="contact-item-text"><p>Adresse</p><p>Quartier XYZ, Dakar, Sénégal</p></div></div>
+            <div class="contact-item"><div class="contact-item-icon">📞</div><div class="contact-item-text"><p>Téléphone</p><p>+221 77 000 00 00</p></div></div>
+            <div class="contact-item"><div class="contact-item-icon">💬</div><div class="contact-item-text"><p>WhatsApp</p><p>+221 77 000 00 00</p></div></div>
+            <div class="contact-item"><div class="contact-item-icon">✉️</div><div class="contact-item-text"><p>Email</p><p>info@lasagesse.sn</p></div></div>
+            <div class="contact-item"><div class="contact-item-icon">🕐</div><div class="contact-item-text"><p>Secrétariat</p><p>Lun–Sam : 8h–13h | Lun–Ven : 15h–18h</p></div></div>
+            <div style="display:flex;gap:12px;margin-top:24px;">
+                <a href="tel:+221770000000" style="flex:1;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:var(--gold);padding:12px;border-radius:10px;text-align:center;font-weight:700;font-size:.85rem;">📞 Appeler</a>
+                <a href="https://wa.me/221770000000" target="_blank" style="flex:1;background:#25d366;color:var(--white);padding:12px;border-radius:10px;text-align:center;font-weight:700;font-size:.85rem;">💬 WhatsApp</a>
+            </div>
+        </div>
+        <div class="contact-form-card">
+            <h3>Formulaire de pré-inscription</h3>
+            <form action="https://formspree.io/f/votre-id" method="POST">
+                <div class="form-row">
+                    <div class="form-group"><label>Nom du parent</label><input type="text" name="nom_parent" placeholder="Votre nom complet" required></div>
+                    <div class="form-group"><label>Téléphone / WhatsApp</label><input type="tel" name="telephone" placeholder="+221 77 XXX XX XX" required></div>
+                </div>
+                <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="votre@email.com"></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Nom de l'enfant</label><input type="text" name="nom_enfant" placeholder="Prénom et nom" required></div>
+                    <div class="form-group"><label>Classe souhaitée</label>
+                        <select name="classe" required>
+                            <option value="">Sélectionner une classe...</option>
+                            <optgroup label="Élémentaire"><option>CI</option><option>CP</option><option>CE1</option><option>CE2</option><option>CM1</option><option>CM2</option></optgroup>
+                            <optgroup label="Collège"><option>6e</option><option>5e</option><option>4e</option><option>3e</option></optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group"><label>Message (optionnel)</label><textarea name="message" placeholder="Vos questions ou commentaires..."></textarea></div>
+                <button type="submit" class="btn-primary" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;"><i class="fas fa-paper-plane"></i> Envoyer ma demande</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Maps -->
+    <div style="max-width:1100px;margin:50px auto 0;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);" class="reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61688.50776634855!2d-17.49219!3d14.71665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5bb71%3A0x7949d1f9acb5fc6e!2sDakar!5e0!3m2!1sfr!2ssn!4v1700000000000!5m2!1sfr!2ssn" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="section-end"><a href="#accueil" class="back-to-top"><i class="fas fa-arrow-up"></i> Retour en haut</a></div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+    <div class="footer-grid">
+        <div><div class="footer-brand-name">École La Sagesse</div><div class="footer-brand-sub">Dakar · Sénégal</div><p class="footer-brand-desc">Former aujourd'hui, bâtir demain. Un établissement d'excellence au service de la jeunesse sénégalaise.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#accueil">Accueil</a></li><li><a href="#apropos">À propos</a></li><li><a href="#elementaire">Élémentaire</a></li><li><a href="#college">Collège</a></li><li><a href="#vie-scolaire">Vie scolaire</a></li></ul></div>
+        <div class="footer-col"><h4>Informations</h4><ul><li><a href="#galerie">Galerie</a></li><li><a href="#frais">Frais scolaires</a></li><li><a href="#actualites">Actualités</a></li><li><a href="#contact">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</div><div class="footer-contact-item"><i class="fas fa-phone"></i> +221 77 000 00 00</div><div class="footer-contact-item"><i class="fab fa-whatsapp"></i> +221 77 000 00 00</div><div class="footer-contact-item"><i class="fas fa-envelope"></i> info@lasagesse.sn</div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 École La Sagesse – Tous droits réservés</div>
+</footer>
+
+<a href="https://wa.me/221770000000" class="whatsapp-float" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ── Navigation active au scroll ── */
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const activeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => activeObserver.observe(s));
+
+    /* ── Hamburger mobile ── */
+    const hamburger = document.querySelector('.nav-hamburger');
+    const navMenu   = document.querySelector('.nav-links');
+    hamburger?.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+    });
+    navLinks.forEach(l => l.addEventListener('click', () => navMenu.classList.remove('open')));
+
+    /* ── Header scroll ── */
+    window.addEventListener('scroll', () => {
+        document.querySelector('header').style.background =
+            window.scrollY > 40 ? 'rgba(10,31,68,0.97)' : 'var(--navy)';
+    });
+
+    /* ── Scroll reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+    /* ── Compteur stats ── */
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            const el  = e.target;
+            const end = parseInt(el.dataset.target, 10);
+            const suf = el.dataset.suffix || '';
+            let cur = 0;
+            const step = Math.ceil(end / (1800 / 16));
+            const timer = setInterval(() => {
+                cur = Math.min(cur + step, end);
+                el.textContent = cur + suf;
+                if (cur >= end) clearInterval(timer);
+            }, 16);
+            counterObserver.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObserver.observe(el));
+
+    /* ── Accordion ── */
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item   = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.accordion-item.open').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+});
+</script>
+</body>
+</html>
